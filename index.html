@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohammad Al-Khateeb — Senior ELV & Telecom Engineer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Caveat:wght@600&display=swap');
+
+    * {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .font-signature { font-family: 'Caveat', cursive; }
+    .font-mono-tech { font-family: 'Space Grotesk', monospace; }
+
+    /* مؤشر الماوس المخصص الأصلي بدون ظهور سهم النظام */
+    *, *::before, *::after, html, body {
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><circle cx="6" cy="6" r="4.5" fill="%231A1917"/></svg>') 6 6, auto !important;
+    }
+    a, button, [role="button"], input {
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><circle cx="15" cy="15" r="12" fill="%231A1917" fill-opacity="0.12" stroke="%231A1917" stroke-width="1.5"/></svg>') 15 15, pointer !important;
+    }
+
+    /* لوحة الألوان الرملية التحريرية */
+    .bg-oatmeal { background-color: #EFECE6; }
+    .bg-header-pill { background-color: #DDD7CD; }
+    .text-charcoal { color: #1A1917; }
+    .text-muted-sand { color: #6C675F; }
+    .border-sand { border-color: rgba(26, 25, 23, 0.12); }
+    .bg-footer-block { background-color: #2F4858; }
+
+    /* سكرول بار كتاني ناعم */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #EFECE6; }
+    ::-webkit-scrollbar-thumb { background: #CCC6BA; border-radius: 9999px; }
+  </style>
+</head>
+
+<body class="bg-oatmeal text-charcoal min-h-screen selection:bg-[#1A1917] selection:text-[#EFECE6] p-4 md:p-8 flex flex-col justify-between">
+
+  <!-- ======================================================== -->
+  <!-- 1. FLOATING HEADER PILL                                  -->
+  <!-- ======================================================== -->
+  <header class="w-full max-w-6xl mx-auto bg-header-pill rounded-2xl px-6 py-3.5 flex items-center justify-between shadow-sm sticky top-4 z-50 backdrop-blur-md bg-opacity-95">
+    <a href="#" class="font-signature text-2xl tracking-wide font-bold hover:opacity-75 transition">M.K.</a>
+
+    <nav class="flex items-center gap-6 text-sm font-medium tracking-tight">
+      <a href="#about" class="hover:opacity-60 transition">about</a>
+      <a href="assets/Mohammed_Sulieman_Senior_ELV_Engineer_CV.pdf" download class="hover:opacity-60 transition">resume</a>
+      <a href="#works" class="hover:opacity-60 transition">works</a>
+    </nav>
+
+    <div class="flex items-center gap-4 text-charcoal">
+      <a href="mailto:m@mkhateeb.com" title="Direct Email" class="hover:opacity-60 transition">
+        <i data-lucide="send" class="w-4 h-4"></i>
+      </a>
+      <a href="https://github.com/Mak241288" target="_blank" class="font-bold text-sm tracking-tighter hover:opacity-60 transition">gh</a>
+      <a href="https://www.linkedin.com/in/mohammed-suleiman-16b92111/" target="_blank" class="font-bold text-sm tracking-tighter hover:opacity-60 transition">in</a>
+    </div>
+  </header>
+
+
+  <!-- ======================================================== -->
+  <!-- 2. HERO SECTION                                          -->
+  <!-- ======================================================== -->
+  <section class="w-full max-w-6xl mx-auto py-12 md:py-20 border-b border-sand">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
+      
+      <!-- إطار الصورة الشخصية المحدث -->
+      <div class="md:col-span-4 order-2 md:order-1 flex justify-center md:justify-start">
+        <div class="relative w-64 h-80 md:w-full md:h-[440px] rounded-3xl overflow-hidden bg-[#DDD7CD] shadow-sm">
+          <img 
+            src="assets/profile.jpg" 
+            onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop'"
+            alt="Mohammad Al-Khateeb" 
+            class="w-full h-full object-cover grayscale contrast-110"
+          >
+          <div class="absolute inset-0 bg-black/5"></div>
+        </div>
+      </div>
+
+      <!-- نصوص الهيرو والاسم المحدث -->
+      <div class="md:col-span-8 order-1 md:order-2 space-y-6">
+        <h1 class="text-6xl md:text-8xl font-extrabold tracking-tight text-charcoal leading-none">
+          hi, i'm <br class="hidden md:block"/>mohammad
+        </h1>
+
+        <div class="space-y-4 max-w-xl">
+          <h2 class="text-xl md:text-2xl font-bold tracking-tight text-charcoal/90">
+            senior telecommunications & elv engineer
+          </h2>
+          <p class="text-sm md:text-base text-muted-sand font-normal leading-relaxed">
+            Over 13 years of engineering leadership across critical healthcare facilities and commercial environments. Specializing in Testing & Commissioning, IP CCTV, life safety systems, and automated cloud workflows.
+          </p>
+        </div>
+
+        <!-- شريط التوفر والمراسلة -->
+        <div class="pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 border-t border-sand">
+          <div class="space-y-1">
+            <div class="text-xs text-muted-sand font-medium">based in kuwait</div>
+            <div class="text-xs font-mono-tech text-charcoal font-semibold">gmt+3 (utc +3)</div>
+          </div>
+
+          <a 
+            href="mailto:m@mkhateeb.com" 
+            class="px-8 py-3 rounded-md bg-[#1A1917] text-[#EFECE6] text-xs font-medium tracking-wider hover:opacity-90 active:scale-95 transition"
+          >
+            text me
+          </a>
+
+          <div class="text-right">
+            <div class="text-[11px] text-muted-sand">available for consult</div>
+            <div class="text-3xl md:text-4xl font-extrabold tracking-tight text-charcoal font-mono-tech">
+              nov' 26
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================== -->
+  <!-- 3. ABOUT & NARRATIVE SECTION                             -->
+  <!-- ======================================================== -->
+  <section id="about" class="w-full max-w-6xl mx-auto py-16 md:py-24 border-b border-sand space-y-12">
+    <div class="flex items-center justify-between text-xs tracking-widest text-muted-sand uppercase font-mono-tech">
+      <span>// about me</span>
+      <span>background & philosophy</span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+      
+      <div class="md:col-span-7 space-y-6">
+        <p class="text-2xl md:text-3xl font-bold leading-snug tracking-tight text-charcoal">
+          I started engineering systems over a decade ago and have been committed to mission-critical infrastructure ever since. I bridge the gap between physical hardware reliability and modern web systems.
+        </p>
+        <p class="text-sm md:text-base text-muted-sand leading-relaxed max-w-xl">
+          Besides overseeing life-safety and network operations across specialized hospitals, I build custom full-stack tools and cloud services that streamline daily workflows.
+        </p>
+      </div>
+
+      <!-- صور مصغرة للبنية التحتية والأنظمة -->
+      <div class="md:col-span-5 grid grid-cols-2 gap-4">
+        <div class="h-44 rounded-2xl overflow-hidden bg-[#DDD7CD]">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover grayscale contrast-125" alt="Network Infrastructure">
+        </div>
+        <div class="h-44 rounded-2xl overflow-hidden bg-[#DDD7CD]">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover grayscale contrast-125" alt="Hardware Circuits">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================== -->
+  <!-- 4. WORKS (Editorial Masonry Grid)                       -->
+  <!-- ======================================================== -->
+  <section id="works" class="w-full max-w-6xl mx-auto py-16 md:py-24 space-y-12">
+    <div class="flex items-baseline justify-between">
+      <h2 class="text-5xl md:text-7xl font-extrabold tracking-tight text-charcoal leading-none">works</h2>
+      <span class="text-xs font-mono-tech text-muted-sand uppercase tracking-wider">[selected 2013 — 2026]</span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+      
+      <!-- Card 1: New Beast Mode -->
+      <a href="https://fit.mkhateeb.com" target="_blank" class="md:col-span-7 group block space-y-3">
+        <div class="aspect-[16/10] w-full rounded-3xl overflow-hidden bg-[#DDD7CD] border border-sand p-6 flex flex-col justify-between group-hover:bg-[#D5CF84]/20 transition duration-300">
+          <div class="flex justify-between items-center text-xs font-mono-tech text-muted-sand">
+            <span>fit.mkhateeb.com</span>
+            <span class="group-hover:translate-x-1 group-hover:-translate-y-1 transition">↗</span>
+          </div>
+          <div class="space-y-1">
+            <span class="text-xs font-mono-tech tracking-wider uppercase text-muted-sand">Full-Stack Application</span>
+            <div class="text-3xl font-extrabold text-charcoal">New Beast Mode</div>
+          </div>
+        </div>
+        <div class="flex justify-between items-baseline text-xs font-mono-tech text-muted-sand">
+          <span>Fitness Tracking & Weight Progression</span>
+          <span>Next.js • Supabase • Tailwind</span>
+        </div>
+      </a>
+
+      <!-- Card 2: Healthcare Infrastructure -->
+      <div class="md:col-span-5 group space-y-3">
+        <div class="aspect-[4/4] w-full rounded-3xl overflow-hidden bg-[#DDD7CD] border border-sand p-6 flex flex-col justify-between">
+          <div class="flex justify-between items-center text-xs font-mono-tech text-muted-sand">
+            <span>Ministry of Health</span>
+            <span>2013 — Present</span>
+          </div>
+          <div class="space-y-1">
+            <span class="text-xs font-mono-tech tracking-wider uppercase text-muted-sand">Life-Safety & Systems</span>
+            <div class="text-2xl font-extrabold text-charcoal">4 Specialized Hospitals</div>
+          </div>
+        </div>
+        <div class="flex justify-between items-baseline text-xs font-mono-tech text-muted-sand">
+          <span>Physical Med, Mental Health, Addiction & Infectious</span>
+          <span>T&C • CCTV • Nurse Call</span>
+        </div>
+      </div>
+
+      <!-- Card 3: Enterprise Telephony & Networking -->
+      <div class="md:col-span-5 group space-y-3">
+        <div class="aspect-[4/4] w-full rounded-3xl overflow-hidden bg-[#DDD7CD] border border-sand p-6 flex flex-col justify-between">
+          <div class="flex justify-between items-center text-xs font-mono-tech text-muted-sand">
+            <span>Issa Hussain Al-Yousifi</span>
+            <span>2011 — 2013</span>
+          </div>
+          <div class="space-y-1">
+            <span class="text-xs font-mono-tech tracking-wider uppercase text-muted-sand">Commercial Deployments</span>
+            <div class="text-2xl font-extrabold text-charcoal">Enterprise ELV & IP-PBX</div>
+          </div>
+        </div>
+        <div class="flex justify-between items-baseline text-xs font-mono-tech text-muted-sand">
+          <span>Panasonic & Cisco Systems Solutions</span>
+          <span>BOQ • Pre-Sales</span>
+        </div>
+      </div>
+
+      <!-- Card 4: Personal Domain Hub & Tooling -->
+      <a href="https://mkhateeb.com" class="md:col-span-7 group block space-y-3">
+        <div class="aspect-[16/10] w-full rounded-3xl overflow-hidden bg-[#DDD7CD] border border-sand p-6 flex flex-col justify-between group-hover:bg-[#D5CF84]/20 transition duration-300">
+          <div class="flex justify-between items-center text-xs font-mono-tech text-muted-sand">
+            <span>mkhateeb.com</span>
+            <span class="group-hover:translate-x-1 group-hover:-translate-y-1 transition">↗</span>
+          </div>
+          <div class="space-y-1">
+            <span class="text-xs font-mono-tech tracking-wider uppercase text-muted-sand">Personal Architecture Hub</span>
+            <div class="text-3xl font-extrabold text-charcoal">Automation & Edge Portal</div>
+          </div>
+        </div>
+        <div class="flex justify-between items-baseline text-xs font-mono-tech text-muted-sand">
+          <span>Swiss Typographic Architecture</span>
+          <span>Astro • Tailwind CSS</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================== -->
+  <!-- 5. ACCENT FOOTER BLOCK                                   -->
+  <!-- ======================================================== -->
+  <footer class="w-full max-w-6xl mx-auto rounded-3xl bg-footer-block text-[#EFECE6] p-8 md:p-14 space-y-12 mt-12 shadow-md">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+      
+      <!-- الاسم المحدث بالفوتر -->
+      <div class="md:col-span-6 space-y-2">
+        <div class="text-xs font-mono-tech uppercase tracking-widest text-slate-300">// get in touch</div>
+        <div class="text-4xl md:text-5xl font-extrabold tracking-tight">MOHAMMAD AL-KHATEEB</div>
+        <p class="text-xs text-slate-300 font-mono-tech">Senior Telecommunications & ELV Systems Engineer</p>
+      </div>
+
+      <!-- عمود الروابط الاجتماعية -->
+      <div class="md:col-span-3 space-y-3 text-xs font-mono-tech">
+        <span class="text-slate-400 uppercase tracking-wider block">socials</span>
+        <div class="flex flex-col gap-2">
+          <a href="https://www.linkedin.com/in/mohammed-suleiman-16b92111/" target="_blank" class="hover:underline underline-offset-4">LinkedIn ↗</a>
+          <a href="https://github.com/Mak241288" target="_blank" class="hover:underline underline-offset-4">GitHub ↗</a>
+        </div>
+      </div>
+
+      <!-- عمود قنوات التواصل المباشرة -->
+      <div class="md:col-span-3 space-y-3 text-xs font-mono-tech">
+        <span class="text-slate-400 uppercase tracking-wider block">contacts</span>
+        <div class="flex flex-col gap-2">
+          <a href="mailto:m@mkhateeb.com" class="hover:underline underline-offset-4">m@mkhateeb.com ↗</a>
+          <a href="assets/Mohammed_Sulieman_Senior_ELV_Engineer_CV.pdf" download class="hover:underline underline-offset-4">download cv (pdf) ↗</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center text-xs font-mono-tech text-slate-400 gap-4">
+      <div>© 2026 MOHAMMAD AL-KHATEEB — ALL RIGHTS RESERVED</div>
+      <div>KUWAIT [29.37° N, 47.97° E]</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
