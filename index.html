@@ -4,6 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mohammad Al-Khateeb — Senior ELV & Telecom Engineer</title>
+  <meta name="description" content="13+ years of engineering leadership across critical healthcare facilities, infrastructure, and web systems.">
+  <meta name="author" content="Mohammad Al-Khateeb">
+  <link rel="canonical" href="https://mkhateeb.com">
+
+  <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mkhateeb.com">
+  <meta property="og:title" content="Mohammad Al-Khateeb — Senior ELV & Telecom Engineer">
+  <meta property="og:description" content="13+ years of engineering leadership across critical healthcare facilities, infrastructure, and web systems.">
+  <meta property="og:image" content="https://mkhateeb.com/assets/profile.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://mkhateeb.com">
+  <meta name="twitter:title" content="Mohammad Al-Khateeb — Senior ELV & Telecom Engineer">
+  <meta name="twitter:description" content="13+ years of engineering leadership across critical healthcare facilities, infrastructure, and web systems.">
+  <meta name="twitter:image" content="https://mkhateeb.com/assets/profile.jpg">
+
+  <!-- Inline SVG Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23DDD7CD'/><text x='16' y='17' dominant-baseline='middle' text-anchor='middle' fill='%231A1917' font-family='system-ui, -apple-system, sans-serif' font-weight='800' font-size='13' letter-spacing='-0.5'>MK</text></svg>">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   
@@ -54,7 +75,7 @@
     </nav>
 
     <div class="flex items-center gap-4 text-charcoal">
-      <a href="mailto:m@mkhateeb.com" title="Direct Email" class="hover:opacity-60 transition">
+      <a href="mailto:m@mkhateeb.com" data-copy-email="m@mkhateeb.com" title="Copy m@mkhateeb.com" class="hover:opacity-60 transition">
         <i data-lucide="send" class="w-4 h-4"></i>
       </a>
       <a href="https://github.com/Mak241288" target="_blank" class="font-bold text-sm tracking-tighter hover:opacity-60 transition">gh</a>
@@ -104,12 +125,13 @@
             <div class="text-xs font-mono-tech text-charcoal font-semibold">gmt+3 (utc +3)</div>
           </div>
 
-          <a 
-            href="mailto:m@mkhateeb.com" 
-            class="px-8 py-3 rounded-md bg-[#1A1917] text-[#EFECE6] text-xs font-medium tracking-wider hover:opacity-90 active:scale-95 transition"
+          <button 
+            type="button" 
+            data-copy-email="m@mkhateeb.com"
+            class="min-w-[120px] text-center px-8 py-3 rounded-md bg-[#1A1917] text-[#EFECE6] text-xs font-medium tracking-wider hover:opacity-90 active:scale-95 transition duration-200"
           >
             text me
-          </a>
+          </button>
         </div>
 
       </div>
@@ -265,7 +287,7 @@
       <div class="md:col-span-3 space-y-3 text-xs font-mono-tech">
         <span class="text-slate-400 uppercase tracking-wider block">contacts</span>
         <div class="flex flex-col gap-2">
-          <a href="mailto:m@mkhateeb.com" class="hover:underline underline-offset-4">m@mkhateeb.com ↗</a>
+          <a href="mailto:m@mkhateeb.com" data-copy-email="m@mkhateeb.com" class="hover:underline underline-offset-4 transition duration-200">m@mkhateeb.com ↗</a>
           <a href="assets/Mohammed_Sulieman_Senior_ELV_Engineer_CV.pdf" download class="hover:underline underline-offset-4">download cv (pdf) ↗</a>
         </div>
       </div>
@@ -280,6 +302,58 @@
 
   <script>
     lucide.createIcons();
+
+    // One-Click Email Copy with Micro-Feedback
+    document.querySelectorAll('[data-copy-email]').forEach(function(el) {
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        var email = el.getAttribute('data-copy-email') || 'm@mkhateeb.com';
+
+        var copyPromise = (navigator.clipboard && navigator.clipboard.writeText)
+          ? navigator.clipboard.writeText(email)
+          : (function(text) {
+              var ta = document.createElement('textarea');
+              ta.value = text;
+              ta.style.position = 'fixed';
+              ta.style.opacity = '0';
+              document.body.appendChild(ta);
+              ta.select();
+              try { document.execCommand('copy'); } catch (_) {}
+              document.body.removeChild(ta);
+              return Promise.resolve();
+            })(email);
+
+        Promise.resolve(copyPromise).then(function() {
+          var hasText = el.childNodes.length > 0 && Array.from(el.childNodes).some(function(n) {
+            return n.nodeType === Node.TEXT_NODE && n.textContent.trim().length > 0;
+          });
+
+          if (hasText) {
+            if (!el.dataset.originalLabel) {
+              el.dataset.originalLabel = el.textContent.trim();
+            }
+            el.textContent = 'COPIED ✓';
+            el.classList.add('opacity-90', 'scale-[0.98]');
+
+            clearTimeout(el._copyTimeout);
+            el._copyTimeout = setTimeout(function() {
+              el.textContent = el.dataset.originalLabel;
+              el.classList.remove('opacity-90', 'scale-[0.98]');
+            }, 2000);
+          } else {
+            var prevTitle = el.getAttribute('title') || 'Copy m@mkhateeb.com';
+            el.setAttribute('title', 'COPIED ✓');
+            el.classList.add('opacity-50', 'scale-110');
+
+            clearTimeout(el._copyTimeout);
+            el._copyTimeout = setTimeout(function() {
+              el.setAttribute('title', prevTitle);
+              el.classList.remove('opacity-50', 'scale-110');
+            }, 2000);
+          }
+        });
+      });
+    });
   </script>
 </body>
 </html>
