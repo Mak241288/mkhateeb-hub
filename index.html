@@ -49,6 +49,27 @@
       cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><circle cx="15" cy="15" r="12" fill="%231A1917" fill-opacity="0.12" stroke="%231A1917" stroke-width="1.5"/></svg>') 15 15, pointer !important;
     }
 
+    /* Active Nav Link Indicator */
+    .nav-link {
+      position: relative;
+      transition: all 0.25s ease;
+    }
+    .nav-link.active {
+      font-weight: 700;
+      color: #1A1917;
+    }
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #1A1917;
+      border-radius: 9999px;
+      transition: all 0.25s ease;
+    }
+
     /* لوحة الألوان الرملية التحريرية */
     .bg-oatmeal { background-color: #EFECE6; }
     .bg-header-pill { background-color: #DDD7CD; }
@@ -97,9 +118,9 @@
     </a>
 
     <nav class="flex items-center gap-6 text-sm font-medium tracking-tight">
-      <a href="#about" class="hover:opacity-60 transition">about</a>
+      <a href="#about" class="nav-link hover:opacity-60 transition">about</a>
       <a href="assets/Mohammed_Sulieman_Senior_ELV_Engineer_CV.pdf" download target="_blank" rel="noopener noreferrer" class="hover:opacity-60 transition">resume</a>
-      <a href="#works" class="hover:opacity-60 transition">works</a>
+      <a href="#works" class="nav-link hover:opacity-60 transition">works</a>
     </nav>
 
     <div class="flex items-center gap-4 text-charcoal">
@@ -437,6 +458,51 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     });
+
+    // Smooth scroll for nav anchor links with Lenis
+    document.querySelectorAll('nav a[href^="#"]').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          if (window.lenis) {
+            window.lenis.scrollTo(targetEl, { offset: -90, duration: 1.2 });
+          } else {
+            targetEl.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+
+    // ScrollSpy: highlight active nav link on scroll, reset in Hero section
+    function updateActiveNav() {
+      const aboutEl = document.getElementById('about');
+      const worksEl = document.getElementById('works');
+      const aboutLink = document.querySelector('nav a[href="#about"]');
+      const worksLink = document.querySelector('nav a[href="#works"]');
+
+      if (!aboutEl || !worksEl || !aboutLink || !worksLink) return;
+
+      const threshold = 180;
+      const worksRect = worksEl.getBoundingClientRect();
+      const aboutRect = aboutEl.getBoundingClientRect();
+
+      aboutLink.classList.remove('active');
+      worksLink.classList.remove('active');
+
+      if (worksRect.top <= threshold) {
+        worksLink.classList.add('active');
+      } else if (aboutRect.top <= threshold) {
+        aboutLink.classList.add('active');
+      }
+    }
+
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    if (window.lenis) {
+      window.lenis.on('scroll', updateActiveNav);
+    }
+    updateActiveNav();
   </script>
 </body>
 </html>
