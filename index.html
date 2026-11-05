@@ -3,24 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Primary Meta Tags -->
   <title>Mohammad Al-Khateeb — Senior ELV & Telecom Engineer</title>
-  <meta name="description" content="13+ years of engineering leadership across critical healthcare facilities, infrastructure, and web systems.">
+  <meta name="title" content="Mohammad Al-Khateeb — Senior ELV & Telecom Engineer">
+  <meta name="description" content="Senior Telecommunications & ELV Systems Engineer based in Kuwait. 13+ years across critical healthcare infrastructure and automated web architecture.">
   <meta name="author" content="Mohammad Al-Khateeb">
-  <link rel="canonical" href="https://mkhateeb.com">
+  <link rel="canonical" href="https://mkhateeb.com/">
 
-  <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+  <!-- Open Graph / WhatsApp / LinkedIn / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mkhateeb.com">
+  <meta property="og:url" content="https://mkhateeb.com/">
   <meta property="og:title" content="Mohammad Al-Khateeb — Senior ELV & Telecom Engineer">
-  <meta property="og:description" content="13+ years of engineering leadership across critical healthcare facilities, infrastructure, and web systems.">
-  <meta property="og:image" content="https://mkhateeb.com/assets/profile.jpg">
+  <meta property="og:description" content="Senior Telecommunications & ELV Systems Engineer based in Kuwait. 13+ years across critical healthcare infrastructure and automated web architecture.">
+  <meta property="og:image" content="https://mkhateeb.com/assets/favicon.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://mkhateeb.com">
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://mkhateeb.com/">
   <meta name="twitter:title" content="Mohammad Al-Khateeb — Senior ELV & Telecom Engineer">
-  <meta name="twitter:description" content="13+ years of engineering leadership across critical healthcare facilities, infrastructure, and web systems.">
-  <meta name="twitter:image" content="https://mkhateeb.com/assets/profile.jpg">
+  <meta name="twitter:description" content="Senior Telecommunications & ELV Systems Engineer based in Kuwait. 13+ years across critical healthcare infrastructure and automated web architecture.">
+  <meta name="twitter:image" content="https://mkhateeb.com/assets/favicon.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -88,7 +92,7 @@
   <!-- 1. FLOATING HEADER PILL                                  -->
   <!-- ======================================================== -->
   <header class="w-full max-w-6xl mx-auto bg-header-pill rounded-2xl px-6 py-3.5 flex items-center justify-between shadow-sm sticky top-4 z-50 backdrop-blur-md bg-opacity-95">
-    <a href="#" class="flex items-center hover:opacity-75 transition" aria-label="Mohammad Al-Khateeb">
+    <a href="#" id="brand-logo" aria-label="Back to top" class="cursor-pointer flex items-center hover:opacity-75 hover:scale-105 transition-all duration-200">
       <img src="assets/logo.png" alt="M.K." class="h-8 md:h-9 w-auto object-contain">
     </a>
 
@@ -417,11 +421,22 @@
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true
     });
+    window.lenis = lenis;
+
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
+
+    document.getElementById('brand-logo')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (window.lenis) {
+        window.lenis.scrollTo(0, { duration: 1.2 });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
   </script>
 </body>
 </html>
