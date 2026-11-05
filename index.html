@@ -58,6 +58,27 @@
     ::-webkit-scrollbar-track { background: #EFECE6; }
     ::-webkit-scrollbar-thumb { background: #CCC6BA; border-radius: 9999px; }
   </style>
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mohammad Al-Khateeb",
+  "jobTitle": "Senior Telecommunications & ELV Engineer",
+  "url": "https://mkhateeb.com",
+  "image": "https://mkhateeb.com/assets/profile.jpg",
+  "description": "مهندس اتصالات وأنظمة تيار خفيف (ELV) ومطور برمجيات سحابية وإدارية.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kuwait",
+    "addressCountry": "KW"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/mohammed-suleiman-16b92111/",
+    "https://github.com/Mak241288"
+  ]
+}
+  </script>
 </head>
 
 <body class="bg-oatmeal text-charcoal min-h-screen selection:bg-[#1A1917] selection:text-[#EFECE6] p-4 md:p-8 flex flex-col justify-between">
@@ -72,7 +93,7 @@
 
     <nav class="flex items-center gap-6 text-sm font-medium tracking-tight">
       <a href="#about" class="hover:opacity-60 transition">about</a>
-      <a href="assets/Mohammed_Sulieman_Senior_ELV_Engineer_CV.pdf" download class="hover:opacity-60 transition">resume</a>
+      <a href="assets/Mohammed_Sulieman_Senior_ELV_Engineer_CV.pdf" download target="_blank" rel="noopener noreferrer" class="hover:opacity-60 transition">resume</a>
       <a href="#works" class="hover:opacity-60 transition">works</a>
     </nav>
 
@@ -201,8 +222,8 @@
     <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
       
       <!-- Card 1: New Beast Mode -->
-      <a href="https://fit.mkhateeb.com" target="_blank" class="md:col-span-7 group block space-y-3">
-        <div class="aspect-[16/10] w-full rounded-3xl overflow-hidden bg-[#DDD7CD] border border-sand p-6 flex flex-col justify-between group-hover:bg-[#D5CF84]/20 transition duration-300">
+      <a href="https://fit.mkhateeb.com" target="_blank" rel="noopener noreferrer" class="md:col-span-7 group block space-y-3 cursor-pointer transform transition-all duration-300 ease-out hover:-translate-y-1">
+        <div class="aspect-[16/10] w-full rounded-3xl overflow-hidden bg-[#DDD7CD] border border-sand p-6 flex flex-col justify-between group-hover:bg-[#D5CF84]/20 group-hover:border-charcoal/20 transition duration-300 shadow-sm hover:shadow-md">
           <div class="flex justify-between items-center text-xs font-mono-tech text-muted-sand">
             <span>fit.mkhateeb.com</span>
             <span class="group-hover:translate-x-1 group-hover:-translate-y-1 transition">↗</span>
@@ -219,8 +240,8 @@
       </a>
 
       <!-- Card 2: Healthcare Infrastructure -->
-      <div class="md:col-span-5 group space-y-3">
-        <div class="aspect-[4/4] w-full rounded-3xl overflow-hidden bg-[#DDD7CD] border border-sand p-6 flex flex-col justify-between">
+      <div class="md:col-span-5 group space-y-3 transform transition-all duration-300 ease-out hover:-translate-y-1">
+        <div class="aspect-[4/4] w-full rounded-3xl overflow-hidden bg-[#DDD7CD] border border-sand p-6 flex flex-col justify-between group-hover:bg-[#D5CF84]/10 group-hover:border-charcoal/20 transition duration-300 shadow-sm">
           <div class="flex justify-between items-center text-xs font-mono-tech text-muted-sand">
             <span>Ministry of Health</span>
             <span>2013 — Present</span>
@@ -237,8 +258,8 @@
       </div>
 
       <!-- Card 3: Enterprise Telephony & Networking -->
-      <div class="md:col-span-5 group space-y-3">
-        <div class="aspect-[4/4] w-full rounded-3xl overflow-hidden bg-[#DDD7CD] border border-sand p-6 flex flex-col justify-between">
+      <div class="md:col-span-5 group space-y-3 transform transition-all duration-300 ease-out hover:-translate-y-1">
+        <div class="aspect-[4/4] w-full rounded-3xl overflow-hidden bg-[#DDD7CD] border border-sand p-6 flex flex-col justify-between group-hover:bg-[#D5CF84]/10 group-hover:border-charcoal/20 transition duration-300 shadow-sm">
           <div class="flex justify-between items-center text-xs font-mono-tech text-muted-sand">
             <span>Issa Hussain Al-Yousifi</span>
             <span>2011 — 2013</span>
@@ -255,8 +276,8 @@
       </div>
 
       <!-- Card 4: Personal Domain Hub & Tooling -->
-      <a href="https://mkhateeb.com" class="md:col-span-7 group block space-y-3">
-        <div class="aspect-[16/10] w-full rounded-3xl overflow-hidden bg-[#DDD7CD] border border-sand p-6 flex flex-col justify-between group-hover:bg-[#D5CF84]/20 transition duration-300">
+      <a href="https://mkhateeb.com" target="_blank" rel="noopener noreferrer" class="md:col-span-7 group block space-y-3 cursor-pointer transform transition-all duration-300 ease-out hover:-translate-y-1">
+        <div class="aspect-[16/10] w-full rounded-3xl overflow-hidden bg-[#DDD7CD] border border-sand p-6 flex flex-col justify-between group-hover:bg-[#D5CF84]/20 group-hover:border-charcoal/20 transition duration-300 shadow-sm hover:shadow-md">
           <div class="flex justify-between items-center text-xs font-mono-tech text-muted-sand">
             <span>mkhateeb.com</span>
             <span class="group-hover:translate-x-1 group-hover:-translate-y-1 transition">↗</span>
@@ -304,7 +325,7 @@
         <div class="flex flex-col gap-2">
           <a href="https://wa.me/96550230063" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-4">WhatsApp ↗</a>
           <a href="mailto:m@mkhateeb.com" data-copy-email="m@mkhateeb.com" class="hover:underline underline-offset-4 transition duration-200">m@mkhateeb.com ↗</a>
-          <a href="assets/Mohammed_Sulieman_Senior_ELV_Engineer_CV.pdf" download class="hover:underline underline-offset-4">download cv (pdf) ↗</a>
+          <a href="assets/Mohammed_Sulieman_Senior_ELV_Engineer_CV.pdf" download target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-4">download cv (pdf) ↗</a>
         </div>
       </div>
 
